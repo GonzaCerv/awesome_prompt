@@ -41,4 +41,17 @@ setopt prompt_subst
 
 # Config for the prompt. PS1 synonym.
 prompt='%2/ ${vcs_info_msg_0_}> '
+
+# Enable zsh completion system
+autoload -Uz compinit
+compinit
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Menu-style selection (navigate with arrow keys)
+zstyle ':completion:*' menu select
+
+# Stop beep
+unsetopt BEEP
 ```
